@@ -86,9 +86,101 @@
 
 
 
+    /************* MySQL AND, OR and NOT Operators *********/
 
-      /************* MySQL AND, OR and NOT Operators *********/
+    // Example-17:AND Syntax
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition1 AND condition2 AND condition3 ...;
+    
+    // Example-18: OR Syntax
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition1 OR condition2 OR condition3 ...;
+
+    // Example-19: NOT Syntax
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE NOT condition;
+
+    // Example-20: The following SQL statement selects all fields from "Customers" where country is "Germany" AND city is "Berlin":
+    SELECT * 
+    FROM Customers
+    WHERE Country = 'Germany' AND City = 'Berlin';
+
+    // Example-21: The following SQL statement selects all fields from "Customers" where city is "Berlin" OR "Stuttgart":
+    SELECT * 
+    FROM Customers
+    WHERE City = 'Berlin' OR City = 'Stuttgart';
+
+    // Example-22: The following SQL statement selects all fields from "Customers" where country is "Germany" OR "Spain":
+    SELECT * 
+    FROM Customers
+    WHERE Country = 'Germany' OR Country = 'Spain';
+
+    // Example-23: The following SQL statement selects all fields from "Customers" where country is NOT "Germany":
+    SELECT *
+    FROM Customers
+    WHERE NOT Country = 'Germany';
+
+    // Example-24: We can also combine the AND, OR and NOT operators.The following SQL statement selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "Stuttgart" (use parenthesis to form complex expressions):
+    SELECT *
+    FROM Customers
+    WHERE Country = 'Germany' AND (City = 'Berlin' OR City = 'Stuttgart');
+
+    // Example-25:The following SQL statement selects all fields from "Customers" where country is NOT "Germany" and NOT "USA": 
+    SELECT * 
+    FROM Customers
+    WHERE NOT Country = 'Germany' AND NOT Country = 'USA';
+
+
+    /************* The MySQL ORDER BY Keyword *********/
+    // The ORDER BY keyword is used to sort the result-set in ascending or descending order.The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
+    // Example-26: ORDER BY Syntax
+    SELECT column1, column2, ...
+    FROM table_name
+    ORDER BY column1, column2, ... ASC|DESC;
   
+    // Example-27: The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" column:
+    SELECT * 
+    FROM Customers
+    ORDER BY Country;
+
+    // Example-28: The following SQL statement selects all customers from the "Customers" table, sorted DESCENDING by the "Country" column:
+    SELECT * 
+    FROM Customers
+    ORDER BY Country DESC;
+
+    // Example-29: The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
+    SELECT * 
+    FROM Customers
+    ORDER BY Country, CustomerName;
+
+    // Example-30:The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:
+    SELECT * 
+    FROM Customers
+    ORDER BY Country ASC, CustomerName DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   ?>
 
